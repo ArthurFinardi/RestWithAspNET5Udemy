@@ -1,7 +1,7 @@
 ﻿using RestWithAspNET5Udemy.Model;
 using System.Collections.Generic;
 
-namespace RestWithAspNET5Udemy.Repository
+namespace RestWithAspNET5Udemy.Repository.Interfaces
 {
     public interface IBookRepository
     {

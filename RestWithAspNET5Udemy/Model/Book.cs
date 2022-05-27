@@ -1,10 +1,11 @@
-﻿using System;
+﻿using RestWithAspNET5Udemy.Model.Base;
+using System;
 
 namespace RestWithAspNET5Udemy.Model
 {
-    public class Book
+    public class Book : BaseEntity
     {
-        public int Id { get; set; } 
+        //public int Id { get; set; } 
         public string Author { get; set; }
         public DateTime Launch_Date { get; set; }
         public decimal Price{ get; set; }

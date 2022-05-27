@@ -6,8 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using RestWithAspNET5Udemy.Model.Context;
-using RestWithAspNET5Udemy.Repository;
-using RestWithAspNET5Udemy.Repository.Implementation;
+using RestWithAspNET5Udemy.Repository.Generic;
+using RestWithAspNET5Udemy.Repository.Interfaces;
 using RestWithAspNET5Udemy.Services;
 using RestWithAspNET5Udemy.Services.Implementation;
 using Serilog;
@@ -47,9 +47,9 @@ namespace RestWithAspNET5Udemy
 
             //Injeção de dependência
             services.AddScoped<IPersonService, PersonService>();
-            services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IBookService, BookService>();
-            services.AddScoped<IBookRepository, BookRepository>();
+            
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
