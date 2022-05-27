@@ -83,3 +83,17 @@ C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNE
 C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\obj\Debug\net5.0\RestWithAspNET5Udemy.pdb
 C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\obj\Debug\net5.0\RestWithAspNET5Udemy.genruntimeconfig.cache
 C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\obj\Debug\net5.0\ref\RestWithAspNET5Udemy.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Evolve.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Humanizer.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.AspNetCore.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Extensions.Hosting.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Extensions.Logging.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Formatting.Compact.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Settings.Configuration.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Sinks.Console.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Sinks.File.dll

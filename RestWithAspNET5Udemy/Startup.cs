@@ -10,22 +10,28 @@ using RestWithAspNET5Udemy.Repository;
 using RestWithAspNET5Udemy.Repository.Implementation;
 using RestWithAspNET5Udemy.Services;
 using RestWithAspNET5Udemy.Services.Implementation;
+using Serilog;
+using System;
+using System.Data.SqlClient;
 
 namespace RestWithAspNET5Udemy
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Enviroment { get; }
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            Enviroment = environment;
+
+            Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-
+        {            
             services.AddControllers();
 
             var connection = Configuration["SQLServerConnection:SQLServerConnectionString"];
@@ -42,6 +48,8 @@ namespace RestWithAspNET5Udemy
             //Injeção de dependência
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IBookService, BookService>();
+            services.AddScoped<IBookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
