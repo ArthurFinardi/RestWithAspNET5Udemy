@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,7 @@ using RestWithAspNET5Udemy.Repository.Interfaces;
 using RestWithAspNET5Udemy.Services;
 using RestWithAspNET5Udemy.Services.Implementation;
 using Serilog;
+using System.Net.Http.Headers;
 
 namespace RestWithAspNET5Udemy
 {
@@ -39,6 +41,14 @@ namespace RestWithAspNET5Udemy
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestWithAspNET5Udemy", Version = "v1" });
             });
+
+            services.AddMvc(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
+            }).AddXmlSerializerFormatters();
 
             //Versioning API
             services.AddApiVersioning();

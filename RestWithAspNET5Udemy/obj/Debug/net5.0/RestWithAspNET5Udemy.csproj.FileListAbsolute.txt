@@ -97,3 +97,4 @@ C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNE
 C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Sinks.Console.dll
 C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
 C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Serilog.Sinks.File.dll
+C:\Projects\git\Udemy\RestWithAspNET5Udemy\RestWithAspNET5Udemy\01_RestWithAspNET5Udemy\RestWithAspNET5Udemy\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
