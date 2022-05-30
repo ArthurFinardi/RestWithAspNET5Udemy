@@ -11,8 +11,6 @@ using RestWithAspNET5Udemy.Repository.Interfaces;
 using RestWithAspNET5Udemy.Services;
 using RestWithAspNET5Udemy.Services.Implementation;
 using Serilog;
-using System;
-using System.Data.SqlClient;
 
 namespace RestWithAspNET5Udemy
 {

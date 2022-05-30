@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RestWithAspNET5Udemy.Data.VO;
 using RestWithAspNET5Udemy.Model;
 using RestWithAspNET5Udemy.Services;
 
@@ -34,14 +35,14 @@ namespace RestWithAspNET5Udemy.Controllers
         }
         
         [HttpPost]
-        public IActionResult Post ([FromBody] Person person)
+        public IActionResult Post ([FromBody] PersonVO person)
         {
             if (person == null) return BadRequest();
             return Ok(_personService.Create(person));
         }
         
         [HttpPut]
-        public IActionResult Put([FromBody] Person person)
+        public IActionResult Put([FromBody] PersonVO person)
         {
             if (person == null) return BadRequest();
             return Ok(_personService.Update(person));

@@ -1,15 +1,15 @@
-﻿using RestWithAspNET5Udemy.Model;
+﻿using RestWithAspNET5Udemy.Data.VO;
+using RestWithAspNET5Udemy.Model;
 using System.Collections.Generic;
 
 namespace RestWithAspNET5Udemy.Services
 {
     public interface IBookService
     {
-        Book Create(Book person);
-        Book FindById(int id);
-        List<Book> FindAll();
-        Book Update(Book person);
+        BookVO Create(BookVO person);
+        BookVO FindById(int id);
+        List<BookVO> FindAll();
+        BookVO Update(BookVO person);
         void Delete(int id);
-        bool Exists(int id);
     }
 }

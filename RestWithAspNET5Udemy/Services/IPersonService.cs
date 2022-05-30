@@ -1,14 +1,14 @@
-﻿using RestWithAspNET5Udemy.Model;
+﻿using RestWithAspNET5Udemy.Data.VO;
 using System.Collections.Generic;
 
 namespace RestWithAspNET5Udemy.Services
 {
     public interface IPersonService
     {
-        Person Create(Person person);
-        Person FindById(int id);
-        List<Person> FindAll();
-        Person Update(Person person);
+        PersonVO Create(PersonVO person);
+        PersonVO FindById(int id);
+        List<PersonVO> FindAll();
+        PersonVO Update(PersonVO person);
         void Delete(int id);
 
     }
