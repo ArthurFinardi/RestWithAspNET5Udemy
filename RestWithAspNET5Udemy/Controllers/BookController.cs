@@ -4,6 +4,7 @@ using RestWithAspNET5Udemy.Data.VO;
 using RestWithAspNET5Udemy.Hypermedia.Filters;
 using RestWithAspNET5Udemy.Model;
 using RestWithAspNET5Udemy.Services;
+using System.Collections.Generic;
 
 namespace RestWithAspNET5Udemy.Controllers
 {
@@ -22,6 +23,10 @@ namespace RestWithAspNET5Udemy.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(200, Type = typeof(List<BookVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get()
         {
@@ -29,6 +34,10 @@ namespace RestWithAspNET5Udemy.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(200, Type = typeof(PersonVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult GetById(int id)
         {
@@ -38,6 +47,9 @@ namespace RestWithAspNET5Udemy.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(200, Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Post([FromBody] BookVO book)
         {
@@ -46,6 +58,9 @@ namespace RestWithAspNET5Udemy.Controllers
         }
 
         [HttpPut]
+        [ProducesResponseType(200, Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Put([FromBody] BookVO book)
         {
@@ -54,6 +69,9 @@ namespace RestWithAspNET5Udemy.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Delete(int id)
         {
             _bookService.Delete(id);

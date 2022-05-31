@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,7 +42,18 @@ namespace RestWithAspNET5Udemy
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestWithAspNET5Udemy", Version = "v1" });
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Rest API's From 0 to Azure wih ASP .NET Core 5 and Docker",
+                        Version = "v1",
+                        Description = "API Restful developed in course 'Rest API's From 0 to Azure wih ASP .NET Core 5 and Docker'",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Árthur Finardi",
+                            Url = new System.Uri("https://github.com/ArthurFinardi/ArthurFinardi")
+                        }
+                    });
             });
 
             //Configurando consumo de xml e json para envio de req - Content Negociaton
@@ -77,8 +89,13 @@ namespace RestWithAspNET5Udemy
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestWithAspNET5Udemy v1"));
+                
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                        "Rest API's From 0 to Azure wih ASP .NET Core 5 and Docker v1"));
             }
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
 
             app.UseHttpsRedirection();
 
