@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using RestWithAspNET5Udemy.Hypermedia.Enricher;
+using RestWithAspNET5Udemy.Hypermedia.Filters;
 using RestWithAspNET5Udemy.Model.Context;
 using RestWithAspNET5Udemy.Repository.Generic;
 using RestWithAspNET5Udemy.Repository.Interfaces;
@@ -42,6 +44,7 @@ namespace RestWithAspNET5Udemy
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestWithAspNET5Udemy", Version = "v1" });
             });
 
+            //Configurando consumo de xml e json para envio de req - Content Negociaton
             services.AddMvc(options =>
             {
                 options.RespectBrowserAcceptHeader = true;
@@ -49,6 +52,13 @@ namespace RestWithAspNET5Udemy
                 options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
                 options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
             }).AddXmlSerializerFormatters();
+
+
+            var filterOptions = new HyperMediaFilterOptions();
+            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+            filterOptions.ContentResponseEnricherList.Add(new BookEnricher());
+
+            services.AddSingleton(filterOptions);
 
             //Versioning API
             services.AddApiVersioning();
@@ -79,6 +89,7 @@ namespace RestWithAspNET5Udemy
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute("DefaultApi", "{controller=values}/{id?}");
             });
         }
     }
