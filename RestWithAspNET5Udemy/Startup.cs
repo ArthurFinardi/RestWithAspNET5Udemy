@@ -34,7 +34,15 @@ namespace RestWithAspNET5Udemy
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
+            //Habilitando configuração do CORS
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
+            
             services.AddControllers();
 
             var connection = Configuration["SQLServerConnection:SQLServerConnectionString"];
@@ -93,6 +101,7 @@ namespace RestWithAspNET5Udemy
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
                         "Rest API's From 0 to Azure wih ASP .NET Core 5 and Docker v1"));
             }
+            
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
             app.UseRewriter(option);
@@ -100,6 +109,9 @@ namespace RestWithAspNET5Udemy
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            //Sempre inserir ele aqui
+            app.UseCors(); //Para que todos os usuários que forem consumir a app, não tenham problemas de acesso.
 
             app.UseAuthorization();
 
